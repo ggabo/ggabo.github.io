@@ -329,7 +329,7 @@ class Filters {
         }
 
         this.applyChange = () => {
-            document.getElementById('preview').style.display = 'none';
+            document.getElementById('preview').style.display = 'none';//
         }
     }
 }
