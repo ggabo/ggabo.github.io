@@ -1,0 +1,49 @@
+$color-background: #333;
+$color: #6c757d;
+body {
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    background: {
+        color: $color-background;
+    }
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    color: white;
+    font: {
+        size: 20px;
+    }
+}
+
+.canvas {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.canvas-photo {
+    background: {
+        color: $color-background;
+    }
+    margin: 10px 0px;
+}
+
+.form-group {
+    margin: 5px 0px;
+}
+
+button.btn {
+    cursor: pointer;
+    background-color: $color;
+    border: {
+        color: $color;
+        style: solid;
+    }
+    color: white;
+}
+
+button.btn:hover {
+    background-color: darken($color, 20%);
+    border-color: darken($color, 20%);
+}

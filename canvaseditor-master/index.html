@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <div class="header">
+        Editor de imagem
+    </div>
+    <div class="canvas">
+        <div>
+            <input type="file" id="file" />
+        </div>
+        <div>
+            <div class="form-group">
+                Brilho
+                <input type="range" min="-255" max="255" value="0" id="brilho" oninput="filters.preview('preview', filters.luminosity,  this.value)" onmouseup="filters.luminosity( this.value)">
+            </div>
+            
+          <!--  <div>
+                Contraste
+                <input type="range" min="-255" max="255" value="0" id="contraste" oninput="filters.preview('preview', filters.contrast,  this.value)" onmouseup="filters.contrast( this.value)">
+            </div>
+            -->
+            
+            <div class="form-group">
+                Pixelizar
+                <input type="range" min="1" max="100" value="1" id="brilho" oninput="filters.preview('preview', filters.pixelate,  this.value)" onmouseup="filters.pixelate( this.value)">
+            </div>
+            <div class="form-group">
+                Limite
+                <input type="range" min="0" max="255" value="127" oninput=" filters.preview('preview', filters.threshold,  this.value)" onmouseup=" filters.threshold( this.value)" id="cor">
+            </div>
+
+            <div class="form-group">
+
+                <button class="btn" onclick="filters.grayScale()">Cinza</button>
+            </div>
+            <div class="form-group">
+
+                <button class="btn" onclick="filters.invert()">Inverter Cores</button>
+            </div>
+            <div class="form-group">
+
+                <button class="btn" onclick="filters.sepia()">Sepia</button>
+            </div>
+
+            <div class="form-group">
+
+                <button class="btn" onclick="filters.edgeDetection()">Detecção de borda</button>
+            </div>
+
+            <div class="form-group">
+
+                <button class="btn" onclick="filters.sharpen()">Aguçar</button>
+            </div>
+
+            <div class="form-group">
+
+                <button class="btn" onclick="filters.gaussianBlur()">Borrar</button>
+            </div>
+
+           <!--  <div>
+                <input type="text" id="dimensions" value="300 500">
+                <button class="btn" onclick="resizeCanvas('dimensions', 'meucanvas')">resize canvas</button>
+            </div>-->
+        </div>
+
+        <canvas id="preview" width="100" height="100" class="canvas-photo"></canvas>
+
+        <canvas id="meucanvas" width="300" height="300" class="canvas-photo">
+
+    </canvas>
+    </div>
+
+
+    <script src="js/filehandler.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      document.getElementById('file').addEventListener('change', handleFileSelect, false);
+      const filters = new Filters("meucanvas");
+    </script>
+</body>
+
+</html>
