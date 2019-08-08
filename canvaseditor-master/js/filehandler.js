@@ -43,3 +43,17 @@ handleFileSelect = (evt) => {
     };
     reader.readAsDataURL(file)
 }
+
+showCanvasEditor = () => {
+    document.getElementById('fileManager').style.display = 'block';
+    document.getElementById('divCanvas').style.display = 'block';
+}
+
+downloadCanvas = (page) => {
+    var canvas = document.getElementById("meucanvas");
+    var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    var link = document.createElement('a');
+    link.download = "my-image.png";
+    link.href = image;
+    link.click();
+}

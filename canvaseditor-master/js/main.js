@@ -319,11 +319,17 @@ class Filters {
 
         this.preview = (canvasdest, func, param) => {
 
+            document.getElementById('preview').style.display = 'block';
+            
             let scale = this.canvas.width/100;
             resizeCanvas(100,parseInt(this.canvas.height/scale),canvasdest);
             this.scaleDown(parseInt(scale), canvasdest);
             func(param, canvasdest);
 
+        }
+
+        this.applyChange = () => {
+            document.getElementById('preview').style.display = 'none';
         }
     }
 }
